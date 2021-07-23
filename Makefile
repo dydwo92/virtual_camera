@@ -9,10 +9,10 @@ bin:
 	mkdir bin
 
 bin/vcmod.ko:
-	cd src; $(MAKE) ; cd ..; cp src/vcmod.ko bin/
+	cd module; $(MAKE) ; cd ..; mv module/vcmod.ko bin/
 
 bin/vcctrl:
-	$(MAKE) -C vcam_ctrl; cp vcam_ctrl/vcctrl bin/
+	$(MAKE) -C utils; mv utils/vcctrl bin/
 
 clean:
-	rm -r bin; cd src; $(MAKE) clean; cd ..; $(MAKE) clean -C vcam_ctrl;
+	rm -r bin; cd module; $(MAKE) clean; cd ..; $(MAKE) clean -C utils;
