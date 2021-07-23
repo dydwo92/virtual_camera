@@ -1,0 +1,6 @@
+bin
+
+module/*
+!module/*.c
+!module/*.h
+module/*.mod.c
